@@ -20,7 +20,7 @@ using namespace std;
 ostream &operator<<(ostream &stream, Time &time) {
 	int hour, min;
 	time.get(hour, min);
-	if (hour < 10 && min < 10)
+	if (hour < 10 && min < 10)	
 		stream << "0" << hour << ":" << "0" << min;
 	else if (hour < 10)
 		stream << "0" << hour << ":" << min;

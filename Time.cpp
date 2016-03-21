@@ -25,7 +25,7 @@ Time::~Time()
 void Time :: operator++(int min_in) {
 	if (min == 59) {
 		min = 0;
-		if (hour == 23) {
+		if (hour == 23) {		//If time is 23:59 when incremented must go to 00:00
 			hour = 0;
 		}
 		else
