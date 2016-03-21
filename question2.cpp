@@ -17,6 +17,19 @@ using namespace std;
 // 2.2  Overload the stream insertion operator for your class to print the time in format hh:mm 
 // 2.3  Overload the POSTFIX increment operator to increment the minutes (include carry if needed)
 
+ostream &operator<<(ostream &stream, Time &time) {
+	int hour, min;
+	time.get(hour, min);
+	if (hour < 10 && min < 10)
+		stream << "0" << hour << ":" << "0" << min;
+	else if (hour < 10)
+		stream << "0" << hour << ":" << min;
+	else if (min < 10)
+		stream << hour << ":0" << min;
+	else
+		stream << hour << ":" << min;
+	return stream;
+}
 
 
 // ***** DO NOT MODIFY CODE BELOW THIS LINE *****

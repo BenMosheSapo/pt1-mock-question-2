@@ -1,6 +1,6 @@
 #include "Time.h"
-
-
+#include <iostream>
+using namespace std;
 
 Time::Time(int hour_in, int min_in)
 {
@@ -20,4 +20,17 @@ void Time:: set(int hour_in, int min_in) {
 
 Time::~Time()
 {
+}
+
+void Time :: operator++(int min_in) {
+	if (min == 59) {
+		min = 0;
+		if (hour == 23) {
+			hour = 0;
+		}
+		else
+			hour += 1;
+	}
+	else
+		min += 1;
 }
